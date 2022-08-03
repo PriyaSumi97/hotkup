@@ -1,0 +1,70 @@
+
+<mat-toolbar class="mat-elevation-z5">
+    <span class="logo1"><img  src="../../../assets/images/logo.png"></span>
+    <span class="logo2"><img  src="../../../assets/images/comb1.png"></span>
+    <!-- <span><i class="fa fa-trash" aria-hidden="true"></i></span> -->
+    <div class="search">
+        <img src="../../../../../assets/images/search.png"><input type="text" class="search_input" name="search"  placeholder="Search">
+    </div>
+    <span class="example-spacer"></span>
+    <span class="menu-spacer"></span>
+    <div fxShow="true" fxHide.lt-md class="header-right">
+      <!-- <span class="bell"><img style="width:25px;" src="../../../assets/images/v932-ning-102.jpg"></span> -->
+      <span class="bell" ><img src="../../assets/images/notification.png"></span>
+      <!-- <button mat-mini-fab  class="profile_pic" title="Setting">
+          P
+      </button> -->
+      <span class="detail_top">
+        <img class="profile_pic" src="../../../assets/images/d76225c7-69ae-4088-abf7-87967ce008aa.jpg">
+      </span>
+      <span class="username"> Priya R</span>
+      <span><img src="../../assets/images/dropdown.svg"></span>
+    </div>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav class="sidenav-container" mode="side" opened>
+
+<div class="mat_task_nav" routerLinkActive="active-link" routerLink="/home/tasks/send/mail-details">
+    <span class="mat_icon"><img  src="../../../assets/images/tasks.png" width="20"></span>
+    <br>
+    <a mat-list-item class="navlist" class="task_route">TASKS</a>
+</div>
+<div class="mat_common_nav">      
+    <span class="mat_icon"><img  src="../../../assets/images/calendar-icon.png"  width="20"></span>
+    <br>
+    <a mat-list-item class="navlist" class="common_route" routerLink="/home">CALENDAR</a>
+</div>
+<div class="mat_common_nav">  
+    <span class="mat_icon"><img  src="../../../assets/images/Component 31.png"  width="20"></span>
+    <br>
+    <a mat-list-item class="navlist" class="common_route" routerLink="/home">CHANNELS</a>
+</div>
+<div class="mat_common_nav">
+    <span class="mat_icon"><img  src="../../../assets/images/chat-icon.png"  width="20"></span>
+    <br>
+    <a mat-list-item class="navlist" class="common_route" routerLink="/home">CHAT</a>  
+</div>
+<div class="mat_common_nav"> 
+    <span class="mat_icon"><img  src="../../../assets/images/reports-icon.png"  width="20"></span>
+    <br>
+    <a mat-list-item class="navlist" class="common_route" routerLink="/home">REPORTS</a> 
+</div>
+<div class="mat_common_nav">  
+    <span class="mat_icon"><img  src="../../../assets/images/dashboards.png"  width="20"></span>
+    <br>
+    <a mat-list-item class="navlist" class="common_route" routerLink="/home">DASHBOARDS</a>
+</div>
+<div class="mat_set_nav">
+    <span class="mat_icon"><img  src="../../../assets/images/settings.png"  width="20"></span>
+    <br>
+    <a mat-list-item class="navlist" class="common_route" routerLink="/home">SETTINGS</a>
+</div>
+
+    </mat-sidenav>
+    <mat-sidenav-content class="taskpage_content">
+         <p class="taskpage_outlet">
+            <router-outlet></router-outlet>
+        </p>
+    </mat-sidenav-content>
+</mat-sidenav-container>  
+

@@ -1,0 +1,291 @@
+<div class="col-sm-12 mail_details">
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-2 detail_top">
+                    <img class="mail_img" src="../../../../../../assets/images/ladypic.png">
+                </div>
+                <div class="col-sm-9 line_one">
+                    <div class="mail_info"><span><span class="task"><img
+                                    src="../../../../../assets/images/hash.png"><span class="task_id" style> Task ID:
+                                    1476</span></span><span><span class="date"><img class="time_circle"
+                                        src="../../../../../assets/images/Time Circle.png"><span class="text_date">01
+                                        AUG</span></span></span>
+                        </span><span><img class="edit_img" src="../../../../../../assets/images/Edit.png"></span>
+                    </div>
+                    <span class="message">Please fix my computer network connection. Both LAN
+                        and Wi-Fi are not working from
+                        morning
+                    </span>
+                    <br>
+                    <span class="detail">
+                        By Pawan Bojanala, 12/11/2021, 5:42PM
+                    </span>
+                    <br>
+                    <div class="line_last">
+                        <span class="heading"><span>CATEGORY: </span><span class="maintenance"> MAINTENANCE</span>
+                        </span><span class="heading"><span> STAGE:</span> <span class="answer"> NEW</span> </span><span
+                            class="heading"><span> ASSIGNEE:</span> <span class="answer"> VIGNESH</span> </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab head_div">
+        <button class="tablinks active" (click)="openCity($event, 'tab1')">Description</button>
+        <button class="tablinks" (click)="openCity($event, 'tab2')">Activities</button>
+        <button class="tablinks" (click)="openCity($event, 'tab3')">Sub Task</button>
+        <button class="tablinks " (click)="openCity($event, 'tab4')">Checklist</button>
+        <button class="tablinks" (click)="openCity($event, 'tab5')">Reminders</button>
+        <button class="tablinks" (click)="openCity($event, 'tab6')">Time log</button>
+        <button class="tablinks" (click)="openCity($event, 'tab7')">Transition</button>
+        <button class="tablinks" (click)="openCity($event, 'tab8')">Forms</button>
+        <button class="tablinks" (click)="openCity($event, 'tab9')">Hooks</button>
+    </div>
+    <div id="tab1" class="tabcontent initial_act">
+        <p class="my_description">Software publishing, consultancy and supply [Software publishing includes production,
+            supply and
+            documentation of ready-made (non-customized) software, operating systems software, business & other
+            applications software for all platforms.</p>
+    </div>
+
+    <div id="tab2" class="tabcontent">
+        <div class="task_head_div"><span class="task_head">Activities<span class="task_counts">(05)</span></span><span
+                ><button class="new_subtask"><img src="../../../../../../assets/images/Plus.png"><span>Add Comment</span></button></span>
+        </div>
+        <ul *ngFor="let act of activities">
+            <li class="act_li"><span class="act_sno">{{act.s_no}}</span><span class="act_row"><span><span
+                            class="act_name">{{act.name}}</span><span class="act_description">
+                            {{act.description}}</span></span><span class="act_duration">{{act.duration}}</span></span>
+            </li>
+        </ul>
+
+    </div>
+    <div id="tab3" class="tabcontent">
+        <div class="task_head_div"><span class="task_head">Sub Tasks<span class="task_counts">(05)</span></span><span
+                ><button class="new_subtask"><img src="../../../../../../assets/images/Plus.png"><span>New Sub
+                    Tasks</span></button></span>
+        </div>
+        <div class="table  subtask_table">
+            <table>
+                <thead class="thead">
+                    <tr>
+                        <th class="head_td">Task ID</th>
+                        <th class="td_title head_td">Title</th>
+                        <th class="head_td">Dependency Tasks</th>
+                        <th class="head_td">Due Date</th>
+                        <th class="head_td">Status</th>
+                    </tr>
+                </thead>
+                <tbody class="subtask_tbody">
+                    <tr *ngFor="let task of sub_task" class="td">
+                        <td class="subtaskId subtd"><span *ngIf="task.color== 'red'" id="red" class="dot"></span><span
+                                *ngIf="task.color== 'yellow'" id="yellow" class="dot"></span><span
+                                *ngIf="task.color== 'green'" id="green" class="dot"></span><span>{{task.taskId}}</span>
+                        </td>
+                        <td class="td">
+                            <div class="subtask_profile"><span><img
+                                        src="../../../../../../assets/images/{{task.image}}"></span><span
+                                    class="task_title">{{task.title}}</span>
+                            </div>
+                        </td>
+                        <td style="color:#0077D7" class="td">
+                            <div class="task_dependency"><span *ngIf="task.dependency!='no'"><img style="width:15px"
+                                        src="../../../../../../assets/images/{{task.dependency}}"></span><span>{{task.dependencyTask}}</span>
+                            </div>
+                        </td>
+                        <td class="td">{{task.dueDate}}</td>
+                        <td class="subttd"><span *ngIf="task.status=='Assigned'"
+                                class="assigned">{{task.status}}</span><span *ngIf="task.status=='Completed'"
+                                class="completed">{{task.status}}</span><span *ngIf="task.status=='New'"
+                                class="new">{{task.status}}</span></td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="tab4" class="tabcontent">
+        <div class="task_head_div"><span class="task_head">Checklist<span class="task_counts">(05)</span></span><span
+                ><button class="new_subtask"><img src="../../../../../../assets/images/Plus.png"><span>New Item</span></button></span>
+        </div>
+        <ul *ngFor="let check of checklist" id="ul_checklist">
+            <li *ngIf="check.img== 'plain_tick.png'" class="checklist_li">
+                <span>
+                    <span class="check_sno">{{check.s_no}}</span>
+                    <span class="check_plain">{{check.description}}</span>
+                </span>
+                <p style=" margin-right: 15px;   margin-top: -18px;"> <input id="checkbox" class="check_box" type="checkbox"></p>
+            </li>
+            <li *ngIf="check.img== 'green_tick.png'" class="checklist_li"><span><span
+                        class="check_sno">{{check.s_no}}</span><span
+                        class="check_tick">{{check.description}}</span></span><p style=" margin-right: 15px; margin-top: -18px;"><input id="checkbox" type="checkbox"
+                        checked></p></li>
+        </ul>
+
+    </div>
+    <div id="tab5" class="tabcontent">
+        <div class="task_head_div"><span class="task_head">Reminders<span class="task_counts">(05)</span></span><span
+                ><button class="new_subtask"><img src="../../../../../../assets/images/Plus.png"><span>New Reminder</span></button></span>
+        </div>
+        <div class="table subtask_table">
+            <table>
+                <thead class="thead">
+                    <tr class="tr">
+                        <th style="border-top:none">S.No</th>
+                        <th class="rem_title">Title</th>
+                        <th style="border-top:none">Type</th>
+                        <th style="border-top:none">Date&Time</th>
+                        <th style="border-top:none">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="subtask_tbody">
+                    <tr *ngFor="let rem of reminders" class="td">
+                        <td class="td s_no">
+                            <span *ngIf="rem.actions== 'cancelled'" class="blur">{{rem.s_no}}</span><span
+                                *ngIf="rem.actions!= 'cancelled'" class="normal">{{rem.s_no}}</span>
+                        </td>
+                        <td class="td">
+                            <div *ngIf="rem.actions== 'cancelled'" class="blur subblur_task">
+                                <div><img src="../../../../../../assets/images/{{rem.image}}"></div>
+                                <div>
+                                    <span>{{rem.title}}</span><span>{{rem.subTitle}}</span>
+                                </div>
+                            </div>
+                            <div *ngIf="rem.actions!= 'cancelled'" class="normal reminder_task">
+                                <div><img class="reminder_image"
+                                        src="../../../../../../assets/images/{{rem.image}}"></div>
+                                <div class="reminder_title">
+                                    <span>{{rem.title}}</span><span
+                                        class="reminder_subtitle">{{rem.subTitle}}</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="td"><span *ngIf="rem.actions== 'cancelled'" class="blur">{{rem.type}}</span><span
+                                *ngIf="rem.actions!= 'cancelled'" class="normal">{{rem.type}}</span></td>
+                        <td class="td"><span *ngIf="rem.actions== 'cancelled'"
+                                class="blur">{{rem.date_time}}</span><span *ngIf="rem.actions!= 'cancelled'"
+                                class="normal">{{rem.date_time}}</span></td>
+                        <td class="td"><span *ngIf="rem.actions== 'cancelled'"
+                                class="blur_actions">{{rem.actions}}</span><span *ngIf="rem.actions!= 'cancelled'"
+                                class="normal_actions">{{rem.actions}}</span></td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="tab6" class="tabcontent">
+        <div class="task_head_div"><span class="task_head">Time Logs<span class="task_counts">(05)</span></span><span
+            ><button class="new_subtask"><img src="../../../../../../assets/images/Plus.png"><span>Add New</span></button></span>
+        </div>
+        <div class="table subtask_table">
+            <table>
+                <thead class="thead">
+                    <tr>
+                        <th class="head_td">S.No</th>
+                        <th class="td_title head_td">Description</th>
+                        <th class="head_td">Duration</th>
+                        <th class="head_td">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="subtask_tbody">
+                    <tr *ngFor="let time of timeLog">
+                        <td class="td s_no"><span *ngIf="time.actions== 'cancelled'"
+                                class="blur">{{time.s_no}}</span><span *ngIf="time.actions!= 'cancelled'"
+                                class="normal">{{time.s_no}}</span></td>
+                        <td class="td"><span *ngIf="time.actions== 'cancelled'"
+                                class="blur">{{time.description}}</span><span *ngIf="time.actions!= 'cancelled'"
+                                class="normal">{{time.description}}</span></td>
+                        <td class="td"><span *ngIf="time.actions== 'cancelled'"
+                                class="blur">{{time.duration}}</span><span *ngIf="time.actions!= 'cancelled'"
+                                class="normal">{{time.duration}}</span></td>
+                        <td class="td"><span *ngIf="time.actions== 'cancelled'"
+                                class="blur_actions">{{time.actions}}</span><span *ngIf="time.actions!= 'cancelled'"
+                                class="normal_actions">{{time.actions}}</span></td>
+            </table>
+        </div>
+    </div>
+    <div id="tab7" class="tabcontent">
+        <p class="transition">Task Stage Transitions</p>
+        <div class="table subtask_table">
+            <table>
+                <thead class="thead">
+                    <tr>
+                        <th class="head_td">S.No</th>
+                        <th class="head_td">Transition</th>
+                        <th class="head_td">From</th>
+                        <th class="head_td">To</th>
+                        <th class="head_td">By</th>
+                        <th class="head_td">Duration</th>
+                    </tr>
+                </thead>
+                <tbody class="subtask_tbody">
+                    <tr *ngFor="let task of transitions">
+                        <td class="td s_no">{{task.s_no}}</td>
+                        <td class="td">{{task.transition}}</td>
+                        <td class="td">{{task.from}}</td>
+                        <td class="td">{{task.to}}</td>
+                        <td class="td" style="color: #0077D7;">{{task.by}}</td>
+                        <td class="td">{{task.duration}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="tab8" class="tabcontent">
+        <div class="task_head_div"><span class="task_head">Forms<span class="task_counts">(03)</span></span><span
+            ><button class="new_subtask"><img src="../../../../../../assets/images/Plus.png"><span>Attach Form</span></button></span>
+        </div>
+        <div class="table subtask_table">
+            <table>
+                <thead class="thead">
+                    <tr>
+                        <th class="head_td font_td">Form Name</th>
+                        <th class="head_td font_td">Attached on</th>
+                        <th class="head_td">Attached by</th>
+                        <th class="head_td">Assigned to</th>
+                        <th class="head_td fonts_td">Status</th>
+                        <th class="head_td">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="subtask_tbody">
+                    <tr *ngFor="let task of forms">
+                        <td class="td">{{task.form_name}}</td>
+                        <td class="td">{{task.attached_on}}</td>
+                        <td class="td">{{task.attached_by}}</td>
+                        <td class="td">{{task.assigned}}</td>
+                        <td class="td"><span *ngIf="task.status=='Submitted'"><img
+                                    src="../../../../../../assets/images/tick.png">{{task.status}}</span><span
+                                *ngIf="task.status!='Submitted'">{{task.status}}</span></td>
+                        <td class="td" style="color: #0077D7;">{{task.actions}}</td>
+
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <div id="tab9" class="tabcontent">
+        <div class="task_head_div"><span class="task_head">Hooks</span><span><button class="new_subtask"><span>Add or
+                    Remove</span></button></span>
+        </div>
+        <div class="table subtask_table">
+            <table>
+                <tbody class="subtask_tbody">
+                    <tr *ngFor="let task of hooks">
+                        <td class="td_hooks">
+                            <div class="div_hooks">
+                                <span><span>{{task.type}}</span><span>{{task.type_name}}</span></span><span><img
+                                        src="../../../../../../assets/images/Edit.png"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

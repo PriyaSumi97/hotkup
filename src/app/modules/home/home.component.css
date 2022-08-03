@@ -1,0 +1,151 @@
+
+
+.img {
+    padding: 10px;
+  }
+  .menu-spacer {
+      flex: 1 1 auto;
+  }
+    
+  .header {
+    background: white;
+    box-shadow: 0px 1px 6px 1px #ccc;
+    z-index: 1;
+    position: static;
+  }
+  .logo1{
+     padding: 10px;
+  }
+  .logo2{
+      
+      padding-left: 10px;
+  }
+  .search{
+    background:  #F3F3F3;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2px 96.1539px 2px 15.3846px;
+    width: 400px;
+    height: 35px;
+    margin-left: 20px;
+    border: 5px solid #F3F3F3;
+  }
+  .username{
+    color: black;
+    font-size: 12px;
+    padding: 10px;
+    padding-left:2px;
+  }
+  .bell{
+    padding-right: 20px;
+  
+  }
+  .mat-elevation-z5{
+    position: relative;
+    z-index: 2;
+  }
+  .mat_icon{
+    width:1px;
+  }
+  .navlist{
+    margin-top: -20px;
+    font-size: 10px;
+    text-decoration: none;
+  }
+  .setting_nav{
+    padding: 50px 10px 0px 30px;
+  }
+  .setting_list{
+    margin-top: -20px;
+    font-size: 10px;
+  
+  }
+  .setting_div{
+    margin-top: 50px;
+  }
+  .sidenav-container {
+    background-color: white; 
+    border-right: 2px solid #a796961f;
+    z-index:-1 !important;
+  }
+  mat-sidenav-container {
+    background: transparent;
+  }
+    mat-sidenav {
+       background: transparent;
+  }
+ .search{
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 2px 5.1539px 2px 15.3846px;
+gap: 7.69px;
+width: 479px;
+height: 37px;
+background: #F3F3F3;
+border-radius: 8px;
+flex: none;
+flex-grow: 0;
+ }
+ .search_input{
+  padding: 4px 5px;
+  font-size: 15px;
+  width: 600px;
+  height: 30px;
+  border: 1px solid #F3F3F3;
+  background: #F3F3F3;
+  
+}
+input[type=text]:focus {
+  outline: none !important;
+}
+  
+
+
+.mat-elevation-z5 {
+  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 1%), 0px 5px 8px 0px rgb(0 0 0 / 0%), 0px 1px 14px 0px rgb(0 0 0 / 4%) !important;
+  background-color: #ffffff;
+}
+.profile_pic{
+  width: 36px;
+  height: 36px; 
+  border: 2px solid #7FC6FF; 
+  border-radius: 50%;
+}
+.detail_top{
+  margin-top: 0px; 
+  padding-right: 0px;
+}
+.mat_task_nav{
+  text-align: center; 
+  padding-top:10px; 
+  border-right: 3px solid #0077d7; 
+  cursor:pointer; 
+  background: #0000ff1a; 
+  margin-top:60px;
+}
+.mat_common_nav{
+  text-align: center;  
+  padding-top:10px;
+}
+.mat_set_nav{
+  text-align: center;  
+  padding-top:70px;
+}
+.task_route{
+  color: #0077d7; 
+  font-weight: 600; 
+  font-size: 9px;
+}
+.common_route{
+  color:black; 
+  font-size: 9px; 
+}
+.taskpage_content{
+  background-color: #ffffff;
+}
+.taskpage_outlet{
+  height:86.5vh;
+}

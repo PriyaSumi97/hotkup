@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 mail_list">
+      <div class="input_flex"><button class="inbox"  [matMenuTriggerFor]="project">Inbox (12)<img  id="dd_img" class="d_img"
+            src="../../../../../assets/images/dropdown.svg" ></button><img style="display: inline;"
+          src="../../../../../assets/images/Frame 859.png">
+          <mat-menu #project="matMenu" class="matmenu">
+            <button class="matbut" mat-menu-item>Sent (8)</button>
+            <button class="matbut" mat-menu-item>Closed (24)</button>
+            <button class="matbut" mat-menu-item>Overdue (2)</button>
+          </mat-menu>
+      </div>
+      <div class="search">
+        <img src="../../../../../assets/images/search.png"><input type="text" class="search_input" name="search"
+          placeholder="Search Tasks">
+      </div>
+      <div class="mail_box" routerLink="mail-details">
+        <div class="line_one"><span class="maintenance">MAINTENANCE</span><span class="more_square">
+          <img src="../../../../../assets/images/More Square.png"></span></div>
+        <p class="message">Please fix my computer network connection. Both LAN and Wi-Fi are not working from morning
+        </p>
+        <div><img src="../../../../../assets/images/hash.png"><span class="task_id"> Task ID: 1476</span></div>
+        <div class="line_four"><img src="../../../../../assets/images/boy_image.png"><span class="name"> Jack
+            Smith</span><span class="date" style="background-color: #EB5757;"><img
+              src="../../../../../assets/images/Time Circle.png"><span class="text_date">01 AUG</span></span></div>
+      </div>
+      <div class="mail_box" routerLink="mail-details">
+        <div class="line_one"><span class="design">DESIGN</span><span class="research">RESEARCH</span><span
+          class="more_square"><img src="../../../../../assets/images/More Square.png"></span></div>
+        <p class="message">Please fix my computer network connection. Both LAN and Wi-Fi are not working from morning
+        </p>
+        <div><img src="../../../../../assets/images/hash.png"><span class="task_id"> Task ID: 1476</span></div>
+        <div class="line_four"><img src="../../../../../assets/images/boy_image.png"><span class="name"> Jack
+            Smith</span><span class="date" style="background-color: #3DD193;"><img
+              src="../../../../../assets/images/Time Circle.png"><span class="text_date">04 AUG</span></span></div>
+      </div>
+      <div class="mail_box" routerLink="mail-details">
+        <div class="line_one"><span class="travel">TRAVEL</span><span
+          class="more_square"><img src="../../../../../assets/images/More Square.png"></span></div>
+        <p class="message">Please fix my computer network connection. Both LAN and Wi-Fi are not working from morning
+        </p>
+        <div><img src="../../../../../assets/images/hash.png"><span class="task_id"> Task ID: 1476</span></div>
+        <div class="line_four"><img src="../../../../../assets/images/boy_image.png"><span class="name"> Jack
+            Smith</span><span class="date" style="background-color: #FCAB3E;"><img
+              src="../../../../../assets/images/Time Circle.png"><span class="text_date">07 AUG</span></span></div>
+      </div>
+    </div>
+    <div class="col-sm-8" style="padding-right:0px">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

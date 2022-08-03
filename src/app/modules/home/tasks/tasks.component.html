@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- <style>
+      .cdk-overlay-pane .mat-menu-panel .mat-menu-content {
+          padding-top: 0px !important;
+          padding-bottom: 8px;
+      }
+      .mat-elevation-z4{
+        box-shadow: 1px solid red !important;
+      }
+
+      .pri123 .mat-menu-panel{
+        background-color: #fff !important;
+      }
+    </style> -->
+    <div class="col-sm-2 task_column">
+      <button class="task_button" [matMenuTriggerFor]="project"><img class="newtask_img" src="../../../../assets/images/Edit Square.png"><span class="newtask_text" >New Task</span>
+      <img src="../../../../assets/images/Line 1.png"><img id="dd_img" class="d_img" src="../../../../assets/images/Polygon 1.png" >
+      <mat-menu #project="matMenu" class="matmenu pri123">
+        <button class="matbut" mat-menu-item>Completed</button>
+        <button class="matbut" mat-menu-item>Overdue</button>
+        
+      </mat-menu></button>
+      <mat-nav-list style="color: black;">
+        <div class="task_list"><img
+            src="../../../../assets/images/Message.png" width="16"><span class="task_topics"> Inbox</span><span
+            class="task_number">(12)</span></div>
+        <div class="task_list"><img
+            src="../../../../assets/images/Send_black.png" width="16"><span class="task_topics"
+            routerLink="send/mail-details"> Sent</span><span class="task_number">(8)</span></div>
+        <div class="task_list"><img
+            src="../../../../assets/images/Close Square.png" width="16"><span class="task_topics"> Closed</span><span
+            class="task_number">(24)</span></div>
+        <div class="task_list"><img
+            src="../../../../assets/images/Info Circle.png" width="16"><span class="task_topics"> Overdue</span><span
+            class="task_number">(3)</span></div>
+
+      </mat-nav-list>
+      <h4 class="category">My Categories</h4>
+      <img class="line_img" src="../../../../assets/images/Line 2.png">
+      <mat-nav-list class="mat_nav_list" style="color: black;">
+        <div class="task_list"  width="16"><span class="category_list"> Design</span><span
+          class="task_number">(6)</span></div>
+        <div class="task_list"  width="16"><span class="category_list">
+            Technology</span><span class="task_number">(8)</span></div>
+        <div class="task_list"  width="16"><span class="category_list"> Finance</span><span
+          class="task_number">(2)</span></div>
+
+      </mat-nav-list>
+    </div>
+    <div class="col-sm-10" style="background: #E5E5E5;">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
